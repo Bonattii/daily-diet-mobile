@@ -1,3 +1,5 @@
+import { TouchableOpacityProps } from 'react-native'
+
 type HomeHighlightOptions = 'ERROR' | 'SUCCESS'
 
 export type ContainerProps = {
@@ -8,7 +10,7 @@ export type IconProps = {
   type: HomeHighlightOptions
 }
 
-export type HomeHighlightProps = {
+export type HomeHighlightProps = TouchableOpacityProps & {
   title: string
   type?: HomeHighlightOptions
 }

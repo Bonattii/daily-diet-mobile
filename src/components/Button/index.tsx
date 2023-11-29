@@ -1,4 +1,3 @@
-import { Children } from 'react'
 import { Container, Title } from './styles'
 import { ButtonProps } from './types'
 

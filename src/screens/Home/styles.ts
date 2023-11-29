@@ -15,6 +15,7 @@ export const HomeHeader = styled.View`
 
 export const ButtonContainer = styled.View`
   margin-top: 40px;
+  margin-bottom: 40px;
   gap: 12px;
 `
 
@@ -22,6 +23,19 @@ export const ButtonContainerText = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.MD}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
+    color: ${theme.COLORS.GRAY_100};
+  `}
+`
+
+export const MealContainer = styled.View`
+  margin-bottom: 40px;
+  gap: 12px;
+`
+
+export const MealDate = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.XL}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
     color: ${theme.COLORS.GRAY_100};
   `}
 `

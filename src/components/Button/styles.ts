@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components/native'
 import { ContainerProps, TitleProps } from './types'
 
 export const Container = styled(TouchableOpacity)<ContainerProps>`
-  flex: 1;
-
   min-height: 50px;
   max-height: 50px;
 

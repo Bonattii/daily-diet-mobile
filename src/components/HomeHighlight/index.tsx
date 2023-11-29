@@ -1,9 +1,13 @@
 import { Container, Icon, Subtitle, Title } from './styles'
 import { HomeHighlightProps } from './types'
 
-const HomeHighlight = ({ title, type = 'SUCCESS' }: HomeHighlightProps) => {
+const HomeHighlight = ({
+  title,
+  type = 'SUCCESS',
+  ...rest
+}: HomeHighlightProps) => {
   return (
-    <Container type={type}>
+    <Container type={type} {...rest}>
       <Title>{title}</Title>
       <Subtitle>
         {type === 'SUCCESS'

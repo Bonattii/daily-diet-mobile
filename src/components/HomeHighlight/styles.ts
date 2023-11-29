@@ -1,9 +1,10 @@
+import { TouchableOpacity } from 'react-native'
+import { ArrowUpRight } from 'phosphor-react-native'
 import styled, { css } from 'styled-components/native'
 
 import { ContainerProps, IconProps } from './types'
-import { ArrowUpRight } from 'phosphor-react-native'
 
-export const Container = styled.View<ContainerProps>`
+export const Container = styled(TouchableOpacity)<ContainerProps>`
   background-color: ${({ theme, type }) =>
     type === 'ERROR' ? theme.COLORS.RED_LIGHT : theme.COLORS.GREEN_LIGHT};
 
