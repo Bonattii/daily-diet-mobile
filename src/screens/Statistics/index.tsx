@@ -9,9 +9,12 @@ import {
   Title,
   HeaderContainer,
   Subtitle,
-  ContentContainer
+  ContentContainer,
+  ContentTitle,
+  ContentStatisticsContainer
 } from './styles'
 import useStatisticsController from './controller'
+import StatisticsBox from 'components/StatisticsBox'
 
 const Statistics = () => {
   const { handleGoBack } = useStatisticsController()
@@ -29,7 +32,26 @@ const Statistics = () => {
         </HeaderContainer>
 
         <ContentContainer>
-          <Text>adfads</Text>
+          <ContentTitle>General statistics</ContentTitle>
+
+          <StatisticsBox
+            title="4"
+            subtitle="best sequence of meals inside of the diet"
+          />
+          <StatisticsBox title="109" subtitle="registered meals" />
+
+          <ContentStatisticsContainer>
+            <StatisticsBox
+              type="SUCCESS"
+              title="32"
+              subtitle="meals inside of the diet"
+            />
+            <StatisticsBox
+              type="ERROR"
+              title="77"
+              subtitle="meals outside the diet"
+            />
+          </ContentStatisticsContainer>
         </ContentContainer>
       </Container>
 

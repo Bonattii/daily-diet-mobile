@@ -57,3 +57,20 @@ export const ContentContainer = styled.View`
   border-top-right-radius: 20px;
   padding: 40px 24px;
 `
+
+export const ContentTitle = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.GRAY_100};
+  `}
+
+  align-self: center;
+  margin-bottom: 32px;
+`
+
+export const ContentStatisticsContainer = styled.View`
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+`
