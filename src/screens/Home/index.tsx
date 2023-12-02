@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { FlatList, Image } from 'react-native'
 import {
   ButtonContainerText,
@@ -18,81 +17,10 @@ import HomeHighlight from 'components/HomeHighlight'
 import ListEmpty from 'components/ListEmpty'
 import MealButton from 'components/MealButton'
 import Loading from 'components/Loading'
-
-type MealList = {
-  date: string
-  mealInfo: {
-    time: string
-    title: string
-    isOnDiet: boolean
-  }[]
-}
+import useHomeController from './controller'
 
 const Home = () => {
-  const [meals, setMeals] = useState<MealList[]>([
-    {
-      date: '23.11.28',
-      mealInfo: [
-        {
-          time: '08:00',
-          title: 'Breakfast',
-          isOnDiet: true
-        },
-        {
-          time: '12:00',
-          title: 'Lunch',
-          isOnDiet: false
-        },
-        {
-          time: '18:00',
-          title: 'Dinner',
-          isOnDiet: true
-        }
-      ]
-    },
-    {
-      date: '23.11.29',
-      mealInfo: [
-        {
-          time: '08:00',
-          title: 'Breakfast',
-          isOnDiet: true
-        },
-        {
-          time: '12:00',
-          title: 'Lunch',
-          isOnDiet: false
-        },
-        {
-          time: '18:00',
-          title: 'Dinner',
-          isOnDiet: true
-        }
-      ]
-    },
-    {
-      date: '23.11.31',
-      mealInfo: [
-        {
-          time: '08:00',
-          title: 'Breakfast',
-          isOnDiet: true
-        },
-        {
-          time: '12:00',
-          title: 'Lunch',
-          isOnDiet: false
-        },
-        {
-          time: '18:00',
-          title: 'Dinner',
-          isOnDiet: true
-        }
-      ]
-    }
-  ])
-
-  const [isLoading, setIsLoading] = useState(false)
+  const { meals, isLoading, handleOpenStatistics } = useHomeController()
 
   return (
     <Container>
@@ -101,7 +29,7 @@ const Home = () => {
         <Image source={userImg} />
       </HomeHeader>
 
-      <HomeHighlight title="90.53%" />
+      <HomeHighlight title="90.53%" onPress={handleOpenStatistics} />
 
       <ButtonContainer>
         <ButtonContainerText>Meals</ButtonContainerText>

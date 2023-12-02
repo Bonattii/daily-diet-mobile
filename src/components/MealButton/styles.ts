@@ -16,7 +16,7 @@ export const Container = styled(TouchableOpacity)`
 
 export const TimeContainer = styled.View`
   border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
-  border-right-width: 1;
+  border-right-width: 1px;
   border-bottom-width: 0;
   border-left-width: 0;
   border-top-width: 0;
