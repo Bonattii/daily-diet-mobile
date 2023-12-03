@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/native'
 import { ArrowLeft } from 'phosphor-react-native'
-import { EdgeInsets, SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { BackIconProps, ContainerProps } from './types'
 

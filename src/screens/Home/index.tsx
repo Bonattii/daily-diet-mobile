@@ -20,7 +20,8 @@ import Loading from 'components/Loading'
 import useHomeController from './controller'
 
 const Home = () => {
-  const { meals, isLoading, handleOpenStatistics } = useHomeController()
+  const { meals, isLoading, handleOpenStatistics, handleOpenNewMeal } =
+    useHomeController()
 
   return (
     <Container>
@@ -34,7 +35,7 @@ const Home = () => {
       <ButtonContainer>
         <ButtonContainerText>Meals</ButtonContainerText>
 
-        <Button title="New meal">
+        <Button title="New meal" onPress={handleOpenNewMeal}>
           <Plus size={18} color="#fff" />
         </Button>
       </ButtonContainer>

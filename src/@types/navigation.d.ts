@@ -3,6 +3,13 @@ export declare global {
     interface RootParamList {
       home: undefined
       statistics: undefined
+      // TODO: ADD MEAL TYPE
+      mealForm: {
+        meal?: string
+      }
+      feedback: {
+        isOnDiet: boolean
+      }
     }
   }
 }

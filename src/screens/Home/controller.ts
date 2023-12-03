@@ -74,10 +74,15 @@ const useHomeController = () => {
     navigation.navigate('statistics')
   }
 
+  const handleOpenNewMeal = () => {
+    navigation.navigate('mealForm', {})
+  }
+
   return {
     meals,
     isLoading,
-    handleOpenStatistics
+    handleOpenStatistics,
+    handleOpenNewMeal
   }
 }
 

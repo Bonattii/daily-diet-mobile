@@ -14,6 +14,7 @@ export const Container = styled(TouchableOpacity)<ContainerProps>`
     type === 'SECONDARY' && `1px solid ${theme.COLORS.GRAY_100}`};
 
   border-radius: 6px;
+  padding: 16px 20px;
 
   flex-direction: row;
   justify-content: center;

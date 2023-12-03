@@ -1,6 +1,4 @@
-import { Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { useTheme } from 'styled-components/native'
 
 import {
   Container,
@@ -17,8 +15,7 @@ import useStatisticsController from './controller'
 import StatisticsBox from 'components/StatisticsBox'
 
 const Statistics = () => {
-  const { handleGoBack } = useStatisticsController()
-  const { COLORS } = useTheme()
+  const { handleGoBack, COLORS } = useStatisticsController()
 
   return (
     <>
