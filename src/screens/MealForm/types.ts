@@ -1,6 +1,7 @@
-//TODO : ADD CORRECT MEAL TYPE
+import { Meal } from 'src/@types/meal'
+
 export type RouteParams = {
-  meal: string
+  meal: Meal
 }
 
 export type CircleProps = {

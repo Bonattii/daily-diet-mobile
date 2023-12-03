@@ -12,56 +12,9 @@ const useHomeController = () => {
         {
           time: '08:00',
           title: 'Breakfast',
-          isOnDiet: true
-        },
-        {
-          time: '12:00',
-          title: 'Lunch',
-          isOnDiet: false
-        },
-        {
-          time: '18:00',
-          title: 'Dinner',
-          isOnDiet: true
-        }
-      ]
-    },
-    {
-      date: '23.11.29',
-      mealInfo: [
-        {
-          time: '08:00',
-          title: 'Breakfast',
-          isOnDiet: true
-        },
-        {
-          time: '12:00',
-          title: 'Lunch',
-          isOnDiet: false
-        },
-        {
-          time: '18:00',
-          title: 'Dinner',
-          isOnDiet: true
-        }
-      ]
-    },
-    {
-      date: '23.11.31',
-      mealInfo: [
-        {
-          time: '08:00',
-          title: 'Breakfast',
-          isOnDiet: true
-        },
-        {
-          time: '12:00',
-          title: 'Lunch',
-          isOnDiet: false
-        },
-        {
-          time: '18:00',
-          title: 'Dinner',
+          date: '23.11.28',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies aliquam, nisl nisl ultricies nisl, eget ultricies nisl nisl eget ultricies nisl.',
           isOnDiet: true
         }
       ]

@@ -1,8 +1,6 @@
+import { Meal } from 'src/@types/meal'
+
 export type MealList = {
   date: string
-  mealInfo: {
-    time: string
-    title: string
-    isOnDiet: boolean
-  }[]
+  mealInfo: Meal[]
 }

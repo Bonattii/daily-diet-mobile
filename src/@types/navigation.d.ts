@@ -1,11 +1,12 @@
+import { Meal } from './meal'
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
       home: undefined
       statistics: undefined
-      // TODO: ADD MEAL TYPE
       mealForm: {
-        meal?: string
+        meal?: Meal
       }
       feedback: {
         isOnDiet: boolean
