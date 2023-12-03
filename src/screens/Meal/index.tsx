@@ -21,7 +21,13 @@ import Button from 'components/Button'
 import HeaderNavigation from 'components/HeaderNavigation'
 
 const Meal = () => {
-  const { COLORS, meal, modalVisible, setModalVisible } = useMealController()
+  const {
+    COLORS,
+    meal,
+    modalVisible,
+    setModalVisible,
+    handleNavigateToEditMeal
+  } = useMealController()
 
   return (
     <>
@@ -45,7 +51,11 @@ const Meal = () => {
             </DietInfoText>
           </DietInfo>
 
-          <Button title="Edit meal" style={{ marginTop: 'auto' }}>
+          <Button
+            title="Edit meal"
+            style={{ marginTop: 'auto' }}
+            onPress={() => handleNavigateToEditMeal(meal)}
+          >
             <PencilSimpleLine size={18} color={COLORS.WHITE} />
           </Button>
 
