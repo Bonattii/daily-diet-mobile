@@ -8,7 +8,6 @@ import Statistics from 'screens/Statistics'
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
-// TODO: Add the other screens here
 const AppRoutes = () => {
   return (
     <Navigator screenOptions={{ headerShown: false }}>

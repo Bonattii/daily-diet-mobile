@@ -25,7 +25,8 @@ const Home = () => {
     isLoading,
     handleOpenStatistics,
     handleOpenNewMeal,
-    handleOpenMealPage
+    handleOpenMealPage,
+    percentageOnDiet
   } = useHomeController()
 
   return (
@@ -35,7 +36,11 @@ const Home = () => {
         <Image source={userImg} />
       </HomeHeader>
 
-      <HomeHighlight title="90.53%" onPress={handleOpenStatistics} />
+      <HomeHighlight
+        title={`${percentageOnDiet.toString()}%`}
+        type={percentageOnDiet > 80 ? 'SUCCESS' : 'ERROR'}
+        onPress={handleOpenStatistics}
+      />
 
       <ButtonContainer>
         <ButtonContainerText>Meals</ButtonContainerText>

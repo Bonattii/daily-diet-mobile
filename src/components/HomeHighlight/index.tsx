@@ -9,7 +9,7 @@ const HomeHighlight = ({
   return (
     <Container type={type} {...rest}>
       <Title>{title}</Title>
-      <Subtitle>of the meals inside the diet</Subtitle>
+      <Subtitle>of the meals inside of the diet</Subtitle>
       <Icon type={type} />
     </Container>
   )

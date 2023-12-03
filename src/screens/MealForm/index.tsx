@@ -23,7 +23,15 @@ const MealForm = () => {
     isOnDiet,
     setIsOnDiet,
     handleCreateMeal,
-    handleEditMeal
+    handleEditMeal,
+    setDate,
+    setTime,
+    setTitle,
+    setDescription,
+    date,
+    time,
+    title,
+    description
   } = useMealFormController()
 
   return (
@@ -34,12 +42,21 @@ const MealForm = () => {
         <ContentContainer>
           <FormContainer>
             <FormText>Name</FormText>
-            <CustomTextInput />
+            <CustomTextInput
+              onChangeText={setTitle}
+              placeholder="Meal Name"
+              value={title}
+            />
           </FormContainer>
 
           <FormContainer>
             <FormText>Description</FormText>
-            <CustomTextArea multiline={true} />
+            <CustomTextArea
+              multiline={true}
+              onChangeText={setDescription}
+              placeholder="Description"
+              value={description}
+            />
           </FormContainer>
 
           <View
@@ -51,12 +68,20 @@ const MealForm = () => {
           >
             <FormContainer style={{ flex: 1 }}>
               <FormText>Date</FormText>
-              <CustomTextInput />
+              <CustomTextInput
+                onChangeText={setDate}
+                placeholder="12/31/2023"
+                value={date}
+              />
             </FormContainer>
 
             <FormContainer style={{ flex: 1 }}>
               <FormText>Time</FormText>
-              <CustomTextInput />
+              <CustomTextInput
+                onChangeText={setTime}
+                placeholder="08:30pm"
+                value={time}
+              />
             </FormContainer>
           </View>
 
@@ -97,7 +122,7 @@ const MealForm = () => {
           </FormContainer>
 
           <Button
-            title="Register meal"
+            title={meal ? 'Edit meal' : 'Register meal'}
             style={{ marginTop: 'auto' }}
             onPress={meal ? handleEditMeal : handleCreateMeal}
           />

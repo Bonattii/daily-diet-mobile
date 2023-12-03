@@ -26,7 +26,8 @@ const Meal = () => {
     meal,
     modalVisible,
     setModalVisible,
-    handleNavigateToEditMeal
+    handleNavigateToEditMeal,
+    handleDeleteMeal
   } = useMealController()
 
   return (
@@ -89,7 +90,12 @@ const Meal = () => {
                 style={{ flex: 1 }}
                 onPress={() => setModalVisible(false)}
               />
-              <Button title="Yes, delete" style={{ flex: 1 }} />
+
+              <Button
+                title="Yes, delete"
+                style={{ flex: 1 }}
+                onPress={handleDeleteMeal}
+              />
             </ModalButtonsContainer>
           </ModalContentContainer>
         </CenteredContainer>

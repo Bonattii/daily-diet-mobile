@@ -17,5 +17,3 @@ export declare global {
     }
   }
 }
-
-// TODO: Add more routes

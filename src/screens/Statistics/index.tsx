@@ -12,44 +12,64 @@ import {
   ContentStatisticsContainer
 } from './styles'
 import useStatisticsController from './controller'
+
 import StatisticsBox from 'components/StatisticsBox'
+import Loading from 'components/Loading'
 
 const Statistics = () => {
-  const { handleGoBack, COLORS } = useStatisticsController()
+  const {
+    handleGoBack,
+    COLORS,
+    isLoading,
+    maxSequence,
+    mealsOffDiet,
+    mealsOnDiet,
+    percentageOnDiet,
+    totalMeals,
+  } = useStatisticsController()
 
   return (
     <>
       <Container type="SUCCESS" edges={['top']}>
-        <HeaderContainer>
-          <BackButton onPress={handleGoBack}>
-            <BackIcon type="SUCCESS" />
-          </BackButton>
-          <Title>90.53%</Title>
-          <Subtitle>of the meals inside the diet</Subtitle>
-        </HeaderContainer>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <HeaderContainer>
+              <BackButton onPress={handleGoBack}>
+                <BackIcon type={percentageOnDiet > 80 ? 'SUCCESS' : 'ERROR'} />
+              </BackButton>
+              <Title>{percentageOnDiet.toString()}%</Title>
+              <Subtitle>of the meals inside the diet</Subtitle>
+            </HeaderContainer>
 
-        <ContentContainer>
-          <ContentTitle>General statistics</ContentTitle>
+            <ContentContainer>
+              <ContentTitle>General statistics</ContentTitle>
 
-          <StatisticsBox
-            title="4"
-            subtitle="best sequence of meals inside of the diet"
-          />
-          <StatisticsBox title="109" subtitle="registered meals" />
+              <StatisticsBox
+                title={maxSequence.toString()}
+                subtitle="best sequence of meals inside of the diet"
+              />
+              <StatisticsBox
+                title={totalMeals.toString()}
+                subtitle="registered meals"
+              />
 
-          <ContentStatisticsContainer>
-            <StatisticsBox
-              type="SUCCESS"
-              title="32"
-              subtitle="meals inside of the diet"
-            />
-            <StatisticsBox
-              type="ERROR"
-              title="77"
-              subtitle="meals outside the diet"
-            />
-          </ContentStatisticsContainer>
-        </ContentContainer>
+              <ContentStatisticsContainer>
+                <StatisticsBox
+                  type="SUCCESS"
+                  title={mealsOnDiet.toString()}
+                  subtitle="meals inside of the diet"
+                />
+                <StatisticsBox
+                  type="ERROR"
+                  title={mealsOffDiet.toString()}
+                  subtitle="meals outside the diet"
+                />
+              </ContentStatisticsContainer>
+            </ContentContainer>
+          </>
+        )}
       </Container>
 
       <SafeAreaView

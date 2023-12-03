@@ -4,6 +4,9 @@ import { useTheme } from 'styled-components/native'
 
 import { RouteParams } from './types'
 import { Meal } from 'src/@types/meal'
+import { Alert } from 'react-native'
+import { AppError } from 'utils/AppError'
+import deleteMeal from 'storage/meal/deleteMeal'
 
 const useMealController = () => {
   const [modalVisible, setModalVisible] = useState(false)
@@ -14,6 +17,22 @@ const useMealController = () => {
 
   const { meal } = route.params as RouteParams
 
+  const handleDeleteMeal = async () => {
+    try {
+      await deleteMeal(meal)
+      navigation.navigate('home')
+    } catch (error) {
+      if (error instanceof AppError) {
+        return Alert.alert('Remove Group', error.message)
+      }
+
+      return Alert.alert(
+        'Remove Group',
+        'An error has occurred while removing a group. Try again.'
+      )
+    }
+  }
+
   const handleNavigateToEditMeal = (meal: Meal) => {
     navigation.navigate('mealForm', { meal })
   }
@@ -23,7 +42,8 @@ const useMealController = () => {
     meal,
     modalVisible,
     setModalVisible,
-    handleNavigateToEditMeal
+    handleNavigateToEditMeal,
+    handleDeleteMeal
   }
 }
 
