@@ -11,6 +11,9 @@ export declare global {
       feedback: {
         isOnDiet: boolean
       }
+      meal: {
+        meal: Meal
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import { TouchableOpacity } from 'react-native'
+
 import useHeaderNavigationController from './controller'
 import { BackIcon, Container, Title } from './styles'
 import { HeaderNavigationProps } from './types'

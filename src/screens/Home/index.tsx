@@ -20,8 +20,13 @@ import Loading from 'components/Loading'
 import useHomeController from './controller'
 
 const Home = () => {
-  const { meals, isLoading, handleOpenStatistics, handleOpenNewMeal } =
-    useHomeController()
+  const {
+    meals,
+    isLoading,
+    handleOpenStatistics,
+    handleOpenNewMeal,
+    handleOpenMealPage
+  } = useHomeController()
 
   return (
     <Container>
@@ -57,6 +62,7 @@ const Home = () => {
                   time={meal.time}
                   title={meal.title}
                   isOnDiet={meal.isOnDiet}
+                  onPress={() => handleOpenMealPage(meal)}
                 />
               ))}
             </MealContainer>

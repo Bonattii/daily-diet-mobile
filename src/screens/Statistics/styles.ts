@@ -9,7 +9,6 @@ export const Container = styled(SafeAreaView)<ContainerProps>`
     type === 'SUCCESS' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
 
   flex: 1;
-  /* padding: 24px; */
 `
 
 export const BackButton = styled.TouchableOpacity`

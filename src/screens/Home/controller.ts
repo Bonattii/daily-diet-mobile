@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 import { MealList } from './types'
+import { Meal } from 'src/@types/meal'
 
 const useHomeController = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -16,6 +17,14 @@ const useHomeController = () => {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies aliquam, nisl nisl ultricies nisl, eget ultricies nisl nisl eget ultricies nisl.',
           isOnDiet: true
+        },
+        {
+          time: '08:00',
+          title: 'Breakasdsadfast',
+          date: '23.11.28',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies aliquam, nisl nisl ultricies nisl, eget ultricies nisl nisl eget ultricies nisl.',
+          isOnDiet: false
         }
       ]
     }
@@ -31,11 +40,16 @@ const useHomeController = () => {
     navigation.navigate('mealForm', {})
   }
 
+  const handleOpenMealPage = (meal: Meal) => {
+    navigation.navigate('meal', { meal })
+  }
+
   return {
     meals,
     isLoading,
     handleOpenStatistics,
-    handleOpenNewMeal
+    handleOpenNewMeal,
+    handleOpenMealPage
   }
 }
 
